@@ -1,11 +1,11 @@
 <h1 align="center">    
-  <img src="https://i.imgur.com/vaW23Aw.png" width="300"> 
+  <a href="https://www.freepik.com"><img title="Icon made by https://www.freepik.com" src="https://i.imgur.com/vaW23Aw.png" width="300"></a> 
 
 <b><a href="https://t.me/proxymus_bot">@proxymus_bot</a></b>
 
   <h2 align="center">
-    Yet another telegram bot that allow you get free proxies from <a href="https://www.proxyscan.io">https://www.proxyscan.io</a> 
-    Bot was created using <a href="https://github.com/telegraf/telegraf">telegraf</a> Bot API framework for Node.js
+    <p>Yet another telegram bot that allow you get free proxies from <a href="https://www.proxyscan.io">https://www.proxyscan.io</a></p>
+    <p>Bot was created using <a href="https://github.com/telegraf/telegraf">telegraf</a> - Telegram Bot API framework for Node.js</p>
   </h2>   
 </h1>
 
@@ -44,3 +44,4 @@
 
 - [ ] Make more complete readme
 - [ ] Add the new resources where to parse proxy and let user to choose
+- [ ] Refactor а source code
