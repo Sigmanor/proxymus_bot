@@ -1,5 +1,5 @@
 <h1 align="center">    
-  <img src="https://i.imgur.com/vaW23Aw.png" width="300"> 
+  <a href="https://www.freepik.com"><img title="Icon made by https://www.freepik.com" src="https://i.imgur.com/vaW23Aw.png" width="300"></a> 
 
 <b><a href="https://t.me/proxymus_bot">@proxymus_bot</a></b>
 
