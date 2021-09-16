@@ -44,3 +44,4 @@
 
 - [ ] Make more complete readme
 - [ ] Add the new resources where to parse proxy and let user to choose
+- [ ] Refactor а source code
