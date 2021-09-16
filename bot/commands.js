@@ -51,7 +51,7 @@ bot.hears('🌐 Get proxy', async (ctx) => {
             ctx.message.chat.id,
             ++ctx.message.message_id,
             null,
-            'Wow, you\'re so fast! Wait 5 second before get the new proxies.')
+            'Please refrain from sending too many requests!')
             .catch(function (error) {
                 console.log(error);
             });

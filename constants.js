@@ -10,7 +10,7 @@ export const menu = {
     settings_sub_menu: 'settingsSubMenu',
 };
 
-export const rateLimiter = new RateLimiter(1, 5000);
+export const rateLimiter = new RateLimiter(1, 1000);
 export const bot = new Telegraf(process.env.BOT_TOKEN);
 
 export const User = mongoose.model('User');
