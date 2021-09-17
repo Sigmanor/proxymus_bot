@@ -26,7 +26,13 @@ const proxyCountQuestion = new StatelessQuestion('count', async (ctx) => {
 });
 bot.use(Telegraf.log(), proxyCountQuestion.middleware());
 
-export default function commands() {
+export default async function commands() {
+    await bot.telegram.setMyCommands([
+        {
+            command: '/start',
+            description: 'Use this if keyboard were stuck',
+        },
+    ]);
     /***** COMMANDS *****/
     bot.start(async (ctx) => {
         await ctx.reply('Main menu', mainKeyboard);
