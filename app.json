@@ -1,0 +1,31 @@
+{
+  "name": "proxymus_bot",
+  "description": "Yet another telegram bot that allow you get free proxies from https://www.proxyscan.io",
+  "keywords": ["Telegram", "Bot", "NodeJs"],
+  "repository": "https://github.com/Sigmanor/proxymus_bot",
+  "website": "https://github.com/Sigmanor/proxymus_bot",
+  "scripts": {
+    "worker": "npm start"
+  },
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your telegram bot token. Get it from https://t.me/BotFather",
+      "value": "",
+      "required": true
+    },
+    "MONGO": {
+      "description": "Mongo db database URL. Get it from https://cloud.mongodb.com",
+      "value": ""
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 0
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": []
+}
