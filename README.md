@@ -45,3 +45,4 @@
 - [ ] Make more complete readme
 - [ ] Add the new resources where to parse proxy and let user to choose
 - [ ] Refactor а source code
+- [ ] Migrate project to https://github.com/grammyjs/grammY
