@@ -29,7 +29,7 @@
     "supervisor": "^0.12.0"
   },
   "dependencies": {
-    "@riddea/telegraf-rate-limiter": "^1.0.7",
+    "@riddea/telegraf-rate-limiter": "^1.0.8",
     "dotenv": "^10.0.0",
     "mongoose": "^6.0.5",
     "node-fetch": "^3.0.0",
