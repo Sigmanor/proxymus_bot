@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@riddea/telegraf-rate-limiter": "^1.0.7",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.0",
     "mongoose": "^6.0.5",
     "node-fetch": "^3.0.0",
     "telegraf": "^4.4.1",
