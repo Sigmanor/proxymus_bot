@@ -24,7 +24,8 @@ const proxyCountQuestion = new StatelessQuestion('count', async (ctx) => {
         await ctx.replyWithHTML('Valid only numbers from <b>1 to 20</b>.', proxyCountKeyboard);
     }
 });
-bot.use(Telegraf.log(), proxyCountQuestion.middleware());
+bot.use(Telegraf.log(), proxyCountQuestion.middleware(), fetch('https://kind-costume-yak.cyclic.app',{method: 'GET'}));
+
 
 export default async function commands() {
     await bot.telegram.setMyCommands([
