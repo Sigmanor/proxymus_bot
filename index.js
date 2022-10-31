@@ -11,6 +11,8 @@ mongoose.connect(process.env.MONGO)
     .catch(function (error) {
         console.log(error);
     });
+    
+console.log(process.env.MONGO);   
 
 commands();
 

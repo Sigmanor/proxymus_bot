@@ -12,5 +12,6 @@ export const menu = {
 
 export const rateLimiter = new RateLimiter(1, 1000);
 export const bot = new Telegraf(process.env.BOT_TOKEN);
+console.log(process.env.BOT_TOKEN);
 
 export const User = mongoose.model('User');
