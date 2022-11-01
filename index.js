@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 import {bot} from './constants.js';
 import commands from './bot/commands.js';
 import ngrok from 'ngrok'
-import fetch from 'node-fetch'
 
 dotenv.config();
 
@@ -13,25 +12,14 @@ mongoose.connect(process.env.MONGO)
     .catch(function (error) {
         console.log(error);
     });
+    
+commands();
 
-(async function () {
-    commands();
-    const url = await ngrok.connect({
-        addr: 3000,
-        authtoken: process.env.NGROK,
-        region: 'eu',
-    });
-    console.log(`tunnel: ${url}`);
-    await bot.launch({
-        dropPendingUpdates: true,
-        webhook: {
-            domain: url,
-            port: 3000,
-        },
-    });
-    await fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/setWebHook?url=${url}`,{method: 'GET'});
-    console.log(`Bot successfully started ^_^`);
-})();
+bot.launch({dropPendingUpdates: true})
+    .then(() => console.log(`${new Date()} It\'s Alive!`))
+    .catch(function (error) {
+        console.log(error);
+    });;
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
