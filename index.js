@@ -30,6 +30,7 @@ mongoose.connect(process.env.MONGO)
     });
     console.log(`Bot successfully started ^_^`);
 })();
+//test
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
