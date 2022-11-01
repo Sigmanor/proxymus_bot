@@ -3,6 +3,7 @@ import './models/User.js';
 import mongoose from 'mongoose';
 import {bot} from './constants.js';
 import commands from './bot/commands.js';
+import ngrok from 'ngrok'
 
 dotenv.config();
 
@@ -12,13 +13,23 @@ mongoose.connect(process.env.MONGO)
         console.log(error);
     });
 
-commands();
-
-bot.launch({dropPendingUpdates: true})
-    .then(() => console.log(`${new Date()} It\'s Alive!`))
-    .catch(function (error) {
-        console.log(error);
+(async function () {
+    commands();
+    const url = await ngrok.connect({
+        addr: 6667,
+        authtoken: process.env.NGROK,
+        region: 'eu',
     });
+    console.log(`tunnel: ${url}`);
+    await bot.launch({
+        dropPendingUpdates: true,
+        webhook: {
+            domain: url,
+            port: 6667,
+        },
+    });
+    console.log(`Bot successfully started ^_^`);
+})();
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
