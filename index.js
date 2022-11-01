@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import {bot} from './constants.js';
 import commands from './bot/commands.js';
 import ngrok from 'ngrok'
+import fetch from 'node-fetch'
 
 dotenv.config();
 
@@ -28,9 +29,9 @@ mongoose.connect(process.env.MONGO)
             port: 3000,
         },
     });
+    await fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/setWebHook?url=${url}`,{method: 'GET'});
     console.log(`Bot successfully started ^_^`);
 })();
-//test
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
