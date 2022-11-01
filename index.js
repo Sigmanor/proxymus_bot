@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO)
 (async function () {
     commands();
     const url = await ngrok.connect({
-        addr: 6667,
+        addr: 3000,
         authtoken: process.env.NGROK,
         region: 'eu',
     });
@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO)
         dropPendingUpdates: true,
         webhook: {
             domain: url,
-            port: 6667,
+            port: 3000,
         },
     });
     console.log(`Bot successfully started ^_^`);
