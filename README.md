@@ -35,8 +35,6 @@
 
 
 <h1>Deploy</h1>   
-<p>Bot hosted on Heroku, so you also can host it there, or in any other hosting</p> 
-
 <a href="https://heroku.com/deploy?template=https://github.com/Sigmanor/proxymus_bot">  <img src="https://www.herokucdn.com/deploy/button.svg"/></a>  
 
 
