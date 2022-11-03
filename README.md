@@ -20,19 +20,11 @@
 
 <h1>Run bot</h1>    
 <ul>    
-    <li><a href="https://github.com/Sigmanor/proxymus_bot/archive/refs/heads/main.zip">Download</a> this repo & unzip to any folder</li>    
-    <li>Install <a href="https://nodejs.org/">node.js</a> <b>v14.17.6</b></li>    
-    <li>Open console and go to the project folder</li>         
-    <li>Run command <code>npm install</code></li>    
-    <li>Run command <code>npm start</code></li>    
-    <li>To run bot in development mode use <code>npm run dev</code> command</li>  
+    <li><code>git clone https://github.com/Sigmanor/proxymus_bot.git</code></li>
+    <li><code>cd proxymus_bot</code></li>         
+    <li><code>npm install</code></li>    
+    <li><code>npm start / npm run dev</code></li>    
 </ul>    
-<p>Do not forget create <b>.env</b> file in project root directory, and add there a few parameters:</p>
-<ul>     
-    <li>BOT_TOKEN=<b>your telegram bot token</b></li>    
-    <li>MONGO=<b>your <a href="https://mongodb.com/">mongodb</a> connection string</b></li>
-</ul>    
-
 
 <h1>Deploy</h1>   
 <a href="https://heroku.com/deploy?template=https://github.com/Sigmanor/proxymus_bot">  <img src="https://www.herokucdn.com/deploy/button.svg"/></a>  
