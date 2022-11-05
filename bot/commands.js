@@ -29,11 +29,11 @@ bot.use(Telegraf.log(), proxyCountQuestion.middleware());
 bot.use(async (ctx, next) => {
     try {
         const dbValue = await getDatabaseValue(ctx.message.chat.id);
-
         if (dbValue.ban === '0') {
             await next();
         } else if (dbValue.ban === undefined) {
             await setDatabaseValue(ctx, 'ban', '0');
+            await next();
         } else {
             console.log(dbValue);
             console.log('banned');
