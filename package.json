@@ -4,7 +4,7 @@
   "description": "Telegram bot that allow you get http/https/socks4/socks5 proxies",
   "main": "index.js",
   "scripts": {
-    "dev": "supervisor -- index.js",
+    "dev": "nodemon index.js",
     "start": "node index.js"
   },
   "type": "module",
