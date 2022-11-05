@@ -11,4 +11,3 @@ const UserSchema = new Schema({
     settingsProxyFormat: String
 });
 mongoose.model('User', UserSchema);
-

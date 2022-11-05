@@ -1,4 +1,4 @@
-import {bot, menu, rateLimiter} from '../constants.js';
+import { bot, menu, rateLimiter } from '../constants.js';
 import {
     mainKeyboard,
     proxyCountKeyboard,
@@ -7,13 +7,13 @@ import {
     proxyTypeKeyboard,
     settingsKeyboard
 } from './keyboards.js';
-import {createUser} from '../database/user/create.js';
-import {setDatabaseValue} from '../database/user/set.js';
-import {getDatabaseValue} from '../database/user/get.js';
-import {changeSettings, loadSettings} from './settings.js';
+import { createUser } from '../database/user/create.js';
+import { setDatabaseValue } from '../database/user/set.js';
+import { getDatabaseValue } from '../database/user/get.js';
+import { changeSettings, loadSettings } from './settings.js';
 import fetch from 'node-fetch';
 import StatelessQuestion from 'telegraf-stateless-question';
-import {Telegraf} from 'telegraf';
+import { Telegraf } from 'telegraf';
 
 const proxyCountQuestion = new StatelessQuestion('count', async (ctx) => {
     let regex = /^([1-9]|1[0-9]|2[0])$/g; //match numbers from 1 to 20
@@ -25,6 +25,25 @@ const proxyCountQuestion = new StatelessQuestion('count', async (ctx) => {
     }
 });
 bot.use(Telegraf.log(), proxyCountQuestion.middleware());
+
+bot.use(async (ctx, next) => {
+    try {
+        const dbValue = await getDatabaseValue(ctx.message.chat.id);
+
+        if (dbValue.ban === '0') {
+            await next();
+        } else if (dbValue.ban === undefined) {
+            await setDatabaseValue(ctx, 'ban', '0');
+        } else {
+            console.log(dbValue);
+            console.log('banned');
+            ctx.reply('🤷‍♀️')
+        }
+    
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 
 export default async function commands() {
@@ -88,7 +107,7 @@ export default async function commands() {
                     console.log(error);
                 });
             const buffer = Buffer.from(data, 'utf8');
-            return await ctx.replyWithDocument({source: buffer, filename: 'proxy.txt',})
+            return await ctx.replyWithDocument({ source: buffer, filename: 'proxy.txt', })
                 .catch(function (error) {
                     console.log(error);
                 });
@@ -108,8 +127,8 @@ export default async function commands() {
             ++ctx.message.message_id,
             null,
             proxies, {
-                parse_mode: 'HTML',
-            }).catch(function (error) {
+            parse_mode: 'HTML',
+        }).catch(function (error) {
             console.log(error);
         });
     });
@@ -139,7 +158,7 @@ export default async function commands() {
             await ctx.replyWithMarkdown('Send me number from 1 to 20' + proxyCountQuestion.messageSuffixMarkdown(),
                 {
                     parse_mode: 'Markdown',
-                    reply_markup: {force_reply: true},
+                    reply_markup: { force_reply: true },
                 }
             );
         }

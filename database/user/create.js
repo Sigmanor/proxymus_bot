@@ -6,6 +6,7 @@ export async function createUser(id) {
     if (!user) {
         const user = await User.create({
             id: id,
+            ban: '0',
             menuState: menu.main,
             settingsProxyType: '',
             settingsProxyLevel: '',
