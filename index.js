@@ -6,6 +6,10 @@ import commands from './bot/commands.js';
 
 dotenv.config();
 
+process.on('uncaughtException', error => {
+    console.log('error', error);
+});
+
 mongoose.connect(process.env.MONGO)
     .then(() => console.log('Mongoose connection open to ' + process.env.MONGO))
     .catch(function (error) {
