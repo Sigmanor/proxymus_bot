@@ -28,6 +28,8 @@ bot.use(Telegraf.log(), proxyCountQuestion.middleware());
 
 bot.use(async (ctx, next) => {
     try {
+        await createUser(ctx.message.chat.id);
+
         const dbValue = await getDatabaseValue(ctx.message.chat.id);
         if (dbValue.ban === '0') {
             await next();
