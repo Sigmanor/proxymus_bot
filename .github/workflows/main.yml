@@ -17,4 +17,4 @@ jobs:
         script: |
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
-          npm --help
+          cd ~/ebash && ./gh2.sh -p
