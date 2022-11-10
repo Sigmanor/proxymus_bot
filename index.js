@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGO)
 commands();
 
 bot.launch({dropPendingUpdates: true})
-    .then(() => console.log(`${new Date()} It\'s Alive!`))
+    .then(() => console.log(`${new Date()} It\'s Alive :)`))
     .catch(function (error) {
         console.log(error);
     });
