@@ -1,8 +1,6 @@
 <h1 align="center">
   <a href="https://www.freepik.com"><img title="Icon made by https://www.freepik.com" src="https://i.imgur.com/OIK4fLf.png" width="300"></a>
 
-<b><a href="https://t.me/proxymus_bot">@proxymus_bot</a></b>
-
   <h2 align="center">
     <p>Yet another telegram bot that allow you get free proxies from <a href="https://www.proxyscan.io">https://www.proxyscan.io</a></p>
     <p>Bot was created using <a href="https://github.com/telegraf/telegraf">telegraf</a> - Telegram Bot API framework for Node.js</p>
